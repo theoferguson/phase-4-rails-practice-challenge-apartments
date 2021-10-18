@@ -12,7 +12,7 @@ class TenantsController < ApplicationController
     end
 
     def create
-        new_tenant = Tenant.create(tenant_params)
+        new_tenant = Tenant.create!(tenant_params)
         render json: new_tenant, status: :created
     end
 
@@ -22,7 +22,7 @@ class TenantsController < ApplicationController
 
     def update
         tenant = find_tenant
-        tenant.update(tenant_params)
+        tenant.update!(tenant_params)
         render json: tenant, status: :ok
     end
 
